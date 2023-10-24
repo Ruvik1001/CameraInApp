@@ -31,9 +31,7 @@ class ViewActivity : AppCompatActivity() {
         Thread {
             Thread.sleep(1000)
             runOnUiThread {
-                val adapter = DateAdapter(directory)
-                recyclerView.adapter = adapter
-                adapter.notifyDataSetChanged()
+                dataAdapter.notifyDataSetChanged()
             }
         }.start()
     }

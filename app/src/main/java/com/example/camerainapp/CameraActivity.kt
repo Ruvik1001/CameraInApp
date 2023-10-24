@@ -49,13 +49,12 @@ class CameraActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
         binding.button.isActivated = true
         binding.button.setOnClickListener {
-            Thread {
-                Log.d("TTT", "BTN_S!")
-                takePicture()
-                Log.d("TTT", "BTN_E!")
-                startActivity(Intent(this, ViewActivity::class.java))
-                finish()
-            }.start()
+
+            Log.d("TTT", "BTN_S!")
+            takePicture()
+            Log.d("TTT", "BTN_E!")
+
+
         }
     }
 
@@ -177,6 +176,8 @@ class CameraActivity : AppCompatActivity(), SurfaceHolder.Callback {
                 val fos = FileOutputStream(pictureFile)
                 fos.write(bitmapToByteArray(rotatedPicture))
                 fos.close()
+                startActivity(Intent(this, ViewActivity::class.java))
+                finish()
             } catch (e: Exception) {
                 e.printStackTrace()
             }
