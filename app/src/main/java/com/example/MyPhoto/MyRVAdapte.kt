@@ -1,7 +1,6 @@
-package com.example.camerainapp
+package com.example.MyPhoto
 
 import android.graphics.BitmapFactory
-import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +20,7 @@ class DateAdapter(private val directory: File) : RecyclerView.Adapter<DateAdapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DateViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_layout, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
         return DateViewHolder(view)
     }
 
@@ -35,12 +34,9 @@ class DateAdapter(private val directory: File) : RecyclerView.Adapter<DateAdapte
     }
 
     inner class DateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val cardView: CardView = itemView.findViewById(R.id.item)
         private val imageView: ImageView = itemView.findViewById(R.id.data)
 
         fun bind(imageFile: File) {
-            cardView.radius = 30f
-
             val bitmap = BitmapFactory.decodeFile(imageFile.absolutePath)
             imageView.setImageBitmap(bitmap)
         }

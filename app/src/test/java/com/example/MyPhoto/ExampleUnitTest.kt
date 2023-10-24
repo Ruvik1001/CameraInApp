@@ -1,4 +1,4 @@
-package com.example.camerainapp
+package com.example.MyPhoto
 
 import org.junit.Test
 
