@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.widget.LinearLayout
-import androidx.annotation.UiThread
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.camerainapp.databinding.ActivityViewBinding
 import java.io.File
 
@@ -20,7 +17,7 @@ class ViewActivity : AppCompatActivity() {
 
         var recyclerView = binding.rv
         val directory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "date")
-        var dataAdapter = DateAdapter(directory)
+        var dataAdapter = DataAdapter(directory)
         recyclerView.adapter = dataAdapter
 
         val lm = LinearLayoutManager(this)

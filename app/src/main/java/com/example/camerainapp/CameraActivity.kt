@@ -85,7 +85,6 @@ class CameraActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
     }
 
-
     override fun surfaceDestroyed(holder: SurfaceHolder) {
         Log.d("TTT", "surfaceDestroyed_S!")
         camera.stopPreview()
@@ -114,7 +113,6 @@ class CameraActivity : AppCompatActivity(), SurfaceHolder.Callback {
 
         return optimalSize ?: sizes[0]
     }
-
 
     private fun checkCameraPermission(): Boolean {
         Log.d("TTT", "checkCameraPermission_S!")

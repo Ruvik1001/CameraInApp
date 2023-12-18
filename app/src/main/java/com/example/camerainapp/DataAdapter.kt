@@ -1,7 +1,6 @@
 package com.example.camerainapp
 
 import android.graphics.BitmapFactory
-import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.cardview.widget.CardView
 import java.io.File
 
-class DateAdapter(private val directory: File) : RecyclerView.Adapter<DateAdapter.DateViewHolder>() {
+class DataAdapter(private val directory: File) : RecyclerView.Adapter<DataAdapter.DateViewHolder>() {
 
     private val imageFiles: List<File>
 
